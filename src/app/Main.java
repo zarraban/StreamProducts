@@ -19,11 +19,6 @@ public class Main {
 
         Map<String, Double> map = products.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.averagingDouble(Product::getPrice)));
 
-
-
-
-
-
         System.out.println("Result "+ map);
         map.entrySet().stream().max(Map.Entry.comparingByValue()).ifPresent(entry -> System.out.println("Max avg price Category "+entry.getKey()));
 
